@@ -1,11 +1,11 @@
-// src/app/page.tsx
+
 import React from 'react';
-import Link from 'next/link';
+import SignupForm from './components/SignupForm';
 
 const HomePage: React.FC = () => {
   return (
     <div>
-hello
+      <SignupForm/>
     </div>
   );
 };
