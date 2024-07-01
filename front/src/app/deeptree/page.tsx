@@ -1,14 +1,14 @@
 "use client"
 import React, { useState } from 'react';
-import axios from 'axios';
+import Tree from '../components/Tree';
 
-const SignupForm: React.FC = () => {
+const TreePage: React.FC = () => {
 
   return (
     <div>
-      hello
+      <Tree/>
     </div>
   );
 };
 
-export default SignupForm;
+export default TreePage;

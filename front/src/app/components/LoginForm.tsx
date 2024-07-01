@@ -15,6 +15,9 @@ const LoginForm: React.FC = () => {
         password,
       });
       setMessage(response.data.msg);
+      if (response.data.redirectUrl) {
+        window.location.href = response.data.redirectUrl;
+      }
     } catch (error) {
       setMessage('Error signing up. Please try again.');
     }

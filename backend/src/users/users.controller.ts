@@ -60,8 +60,10 @@ import {
     @UseGuards(LocalAuthGuard)
     @Post('/login')
     login(@Request() req): any {
-      return {User: req.user,
-              msg: 'User logged in'};
+      return {
+        user: req.user,
+        redirectUrl: '/deeptree', 
+      };
     }
      //Get / protected
     @UseGuards(AuthenticatedGuard)
