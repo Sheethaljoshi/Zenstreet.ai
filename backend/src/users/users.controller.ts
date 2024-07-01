@@ -5,6 +5,7 @@ import {
     Post,
     UseGuards,
     Request,
+    Param,
   } from '@nestjs/common';
   import * as bcrypt from 'bcrypt';
   import { AuthenticatedGuard } from 'src/auth/authenticated.guard';
@@ -31,6 +32,30 @@ import {
         userName: result.username
       };
     }
+
+  // Add node to tree
+  @Post('/addNodeToNode/:userId/:parentId')
+  async addNodeToNode(
+    @Param('userId') userId: string,
+    @Param('parentId') parentId: string,
+    @Body() newNode: any,
+  ) {
+    const result = await this.usersService.addNode(userId, parentId, newNode);
+    return {
+      msg: 'Node added under specific node successfully',
+      user: result,
+    };
+  }
+
+ 
+  @Get('/tree/:userId')
+  async getTreeStructure(@Param('userId') userId: string) {
+    const tree = await this.usersService.getTreeStructure(userId);
+    return {
+      tree,
+    };
+  }
+
     //Post / Login
     @UseGuards(LocalAuthGuard)
     @Post('/login')
