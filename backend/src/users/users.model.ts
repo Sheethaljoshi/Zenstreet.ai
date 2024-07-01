@@ -33,6 +33,6 @@ export interface User extends mongoose.Document {
 export interface TreeNode {
   id: string;
   level: number;
-  value: any;
+  value: number;
   children?: TreeNode[];
 }

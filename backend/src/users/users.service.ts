@@ -12,7 +12,7 @@ export class UsersService {
     const initialNode: TreeNode = {
       id: '1-1',  // Initial node id
       level: 1,
-      value: 'Initial Node',
+      value: 1,
       children: [],
     };
     const newUser = new this.userModel({
